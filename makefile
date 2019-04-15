@@ -24,7 +24,11 @@ all: $(patsubst addons/%, $(OUT)/addons/%.pbo, $(wildcard addons/*))
 signatures: $(patsubst addons/%, $(OUT)/addons/%.pbo.bisign, $(wildcard addons/*))
 
 production: clean
-	$(MAKE) $(MAKEFLAGS) PRODUCTION= signatures
+ifndef KEY
+	$(error cannot sign pbos because KEY is undefined)
+endif
+	$(info ======== production build ========)
+	@$(MAKE) $(MAKEFLAGS) PRODUCTION=true signatures
 
 clean:
 	rm -rf $(OUT)
@@ -35,7 +39,7 @@ addons/%/$(PBOPREFIX): addons/%
 
 $(OUT)/addons/%.pbo.bisign: $(OUT)/addons/%.pbo
 	@echo "sign $<"
-	@$(ARMAKE2) sign -f $(KEY) $< $@
+	@$(ARMAKE2) sign -f "$(KEY)" "$<" "$@"
 
 .SECONDEXPANSION:
 $(OUT)/addons/%.pbo: addons/% addons/%/$$(PBOPREFIX) $$(call sources, %)
