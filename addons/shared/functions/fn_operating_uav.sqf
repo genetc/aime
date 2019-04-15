@@ -1,0 +1,1 @@
+(UAVControl getConnectedUAV _this) select 1 != "";
