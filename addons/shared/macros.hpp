@@ -3,6 +3,6 @@
 #define AUTHOR	upsl
 #define MOD		aime
 
-#include "generic.hpp"
+#include "\upsl\include\generic.hpp"
 
 #endif
