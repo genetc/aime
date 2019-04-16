@@ -1,7 +1,7 @@
-#include "..\self_macros.hpp"
+#include "..\macros.hpp"
 
 [
-	QUOT(SETTING(hide)),
+	Q(SETTING(hide)),
 	"CHECKBOX",
 	"Hide actions if associated keybindings exist",
 	CATEGORY,

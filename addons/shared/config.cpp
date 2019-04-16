@@ -6,7 +6,7 @@ class CfgFunctions {
 
 class CfgPatches
 {
-	class PREFIX
+	class ADDON
 	{
 		units[] = {};
 		weapons[] = {};

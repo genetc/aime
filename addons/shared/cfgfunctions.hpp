@@ -1,23 +1,12 @@
 #include "macros.hpp"
 
-class PREFIX {
+class ADDON {
 	class functions {
-		file = QUOT(FILE(functions));
+		file = Q(FILE(functions));
 
-		class preinit {
-			FNC_RECOMPILE;
-		};
-
-		class operating_uav {
-			FNC_RECOMPILE;
-		};
-
-		class keybind_name {
-			FNC_RECOMPILE;
-		};
-
-		class ignore_keybind_for_input_action {
-			FNC_RECOMPILE;
-		};
+		class preinit {};
+		class operating_uav {};
+		class keybind_name {};
+		class ignore_keybind_for_input_action {};
 	};
 };
